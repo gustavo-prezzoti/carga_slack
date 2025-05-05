@@ -53,7 +53,6 @@ def is_dollar_value(value_str):
         True se valor está em dólar, False caso contrário
     """
     value_str = str(value_str).strip()
-    # Verifica se '$' está presente sem 'R$'
     return '$' in value_str and 'R$' not in value_str
 
 def extract_titles_and_fields(record: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -121,28 +120,28 @@ def get_mc_emoji(mc_value):
     MC > 1000: :money_with_wings:
     """
     try:
-        # Limpa o valor e converte para float
+
         mc_str = str(mc_value).replace('R$', '').strip()
         
-        # Substitui vírgula por ponto para converter corretamente
+
         if ',' in mc_str and '.' in mc_str:
-            # Formato brasileiro: 1.234,56
+
             mc_str = mc_str.replace('.', '').replace(',', '.')
         elif ',' in mc_str:
-            # Formato com vírgula como decimal: 1234,56
+
             mc_str = mc_str.replace(',', '.')
             
-        # Verifica se é negativo
+
         is_negative = mc_str.startswith('-')
         if is_negative:
             mc_str = mc_str[1:]
             
-        # Converte para float
+
         mc_num = float(mc_str)
         if is_negative:
             mc_num = -mc_num
             
-        # Avalia os limites para valores monetários
+
         if mc_num < 0:
             return ":warning:"
         elif mc_num <= 100:
@@ -262,7 +261,7 @@ def process_current_date_only(sheets_url: str, site_name: str) -> None:
         
         send_to_slack(msg, webhook_url)
         
-        # Enviar resumo (igual ao process_all_sheets)
+
         try:
             total_investimento = to_float(investimento)
             total_receita = to_float(receita)
@@ -392,7 +391,6 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                 send_to_slack('<==================================:small_blue_diamond:===============================>', webhook_url)
 
             try:
-                # Envia apenas a mensagem principal de cada site, sem o resumo individual
                 sheets_processor = GoogleSheetsProcessor(sheet_url, site_name=site_name)
                 current_date = get_current_date_str()
                 current_month = datetime.now().month
@@ -405,7 +403,7 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                 site_receita_dolar = 0.0
                 site_mc = 0.0
                 encontrou_registro = False
-                roas_lidos = []  # Acumula todos os ROAS lidos dos sites/abas
+                roas_lidos = [] 
                 for sheet in sheets:
                     sheet_id = sheet['id']
                     records, summary, actual_name = sheets_processor.read_data(sheet_id)
@@ -421,7 +419,6 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                             break
                     if not aba_mes_vigente:
                         continue
-                    # DEBUG: mostrar todos os valores de Data lidos
                     print(f"[DEBUG] Datas lidas na aba {pagina}: {[r.get('Data') for r in records]}")
                     current_record = None
                     for r in reversed(records):
@@ -429,7 +426,6 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                         if not data_val:
                             continue
                         data_val_str = str(data_val).strip()
-                        # Tenta normalizar e comparar datas
                         matched = False
                         for fmt in ["%d/%m", "%d/%m/%Y", "%d/%m/%y", "%d-%m", "%d-%m-%Y", "%d-%m-%y"]:
                             try:
@@ -440,7 +436,6 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                                     break
                             except Exception:
                                 continue
-                        # Também aceita datas tipo d/m (sem zero à esquerda)
                         if not matched:
                             try:
                                 parts = re.split(r'[/-]', data_val_str)
@@ -463,8 +458,6 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                     mc_geral = clean_value(current_record.get('MC Geral', '0,00'))
                     print(f"Valores encontrados para {site_name}: Investimento={investimento}, Receita={receita}, ROAS={roas_geral}, MC={mc_geral}")
                     
-                    # Detecta se a receita está em dólar ou em reais
-                    # Mais preciso que apenas verificar '$'
                     is_dolar = is_dollar_value(receita)
                     print(f"[DEBUG] Receita '{receita}' detectada como {'DÓLAR' if is_dolar else 'REAL'}")
                     
@@ -474,22 +467,18 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                     else:
                         site_receita_real += to_float(receita)
                     site_mc += to_float(mc_geral)
-                    site_roas = roas_geral  # Armazena o ROAS lido
+                    site_roas = roas_geral 
                     roas_lidos.append(to_float(roas_geral))
                     
-                # Envia mensagem do site (soma de todas as abas do mês vigente)
                 if site_investimento > 0 or site_receita_real > 0 or site_receita_dolar > 0 or encontrou_registro:
-                    # Usa o ROAS lido diretamente da planilha, não calcula
                     roas_geral_str = site_roas
                     
-                    # Se o ROAS está vazio, usa um valor padrão
                     if not roas_geral_str or roas_geral_str == '0,00':
                         roas_geral_str = '0,00'
                         
                     roas_emoji = get_roas_emoji(roas_geral_str)
                     mc_emoji = get_mc_emoji(str(site_mc))
                     
-                    # Formata mensagem com ambas as receitas se necessário
                     investimento_str = f"R$ {site_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                     receita_real_str = f"R$ {site_receita_real:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if site_receita_real > 0 else "R$ 0,00"
                     receita_dolar_str = f"$ {site_receita_dolar:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if site_receita_dolar > 0 else "$ 0,00"
@@ -511,13 +500,11 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                         f"MC: *{mc_geral}*"
                     send_to_slack(msg, webhook_url)
                 
-                # Envia o resumo do site logo após a mensagem principal
                 try:
                     total_investimento = to_float(site_investimento)
                     total_receita_real = to_float(site_receita_real)
                     total_receita_dolar = to_float(site_receita_dolar)
                     total_mc = to_float(site_mc)
-                    # Corrigir: calcular ROAS total como receita total / investimento total
                     total_receita = total_receita_real + total_receita_dolar
                     roas_total = sum(roas_lidos)
                     roas_total_str = f"{roas_total:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
@@ -569,7 +556,7 @@ def exponential_backoff(attempt, max_backoff=60):
         Tempo de espera em segundos
     """
     base_delay = min(2 ** (attempt - 1), max_backoff)
-    jitter = random.uniform(0, 0.1 * base_delay)  # 10% de jitter
+    jitter = random.uniform(0, 0.1 * base_delay)  
     return base_delay + jitter
 
 def main():
@@ -615,12 +602,10 @@ def main():
         total_receita_dolar_geral = 0.0
         total_mc_geral = 0.0
         first_webhook_url = None
-        # Variável para rastrear o último site processado
+
         last_site_processed = False
-        # Obtém o último site da lista para comparação
         last_site = all_sites[-1] if all_sites else None
         
-        # Agrupar sites por webhook
         webhook_to_sites = {}
         for site_name in all_sites:
             config = db.get_site_config(site_name)
@@ -636,7 +621,7 @@ def main():
             total_mc = 0.0
             sites_processados = 0
             total_sites = len(sites)
-            roas_lidos = []  # Acumula todos os ROAS lidos dos sites/abas
+            roas_lidos = [] 
             for site_name in sites:
                 retry = True
                 retry_count = 0
@@ -652,12 +637,12 @@ def main():
                             break
                         print(f"Processando site: {site_name} ({sheet_url})")
                         sheets_processor = GoogleSheetsProcessor(sheet_url, site_name=site_name)
-                        # Busca o dia anterior
+
                         current_date = get_current_date_str()
                         current_month = datetime.now().month
                         current_year = datetime.now().year
                         
-                        # Obter abas com backoff exponencial
+  
                         sheets = None
                         sheet_retry = 0
                         while sheets is None and sheet_retry < 3:
@@ -684,8 +669,7 @@ def main():
                         site_mc = 0.0
                         encontrou_registro = False
                         
-                        # Reduzir o número de abas processadas para evitar exceder o rate limit
-                        # Processa apenas as abas do mês vigente
+
                         mes_vigente_sheets = []
                         for sheet in sheets:
                             sheet_name = sheet['name']
@@ -696,14 +680,14 @@ def main():
                                         mes_vigente_sheets.append(sheet)
                                     break
                         
-                        # Se não encontrou aba do mês vigente, tenta o primeiro
+
                         if not mes_vigente_sheets and sheets:
                             mes_vigente_sheets = [sheets[0]]
                             print(f"Nenhuma aba do mês vigente encontrada para {site_name}. Usando a primeira aba.")
                             
                         for sheet in mes_vigente_sheets:
                             sheet_id = sheet['id']
-                            # Tenta ler os dados com backoff exponencial
+
                             records = None
                             summary = None
                             actual_name = None
@@ -726,10 +710,8 @@ def main():
                                 continue
                                 
                             pagina = actual_name or sheet['name']
-                            # Já verificamos que é mês vigente acima
                             aba_mes_vigente = True
                             
-                            # DEBUG: mostrar todos os valores de Data lidos
                             print(f"[DEBUG] Datas lidas na aba {pagina}: {[r.get('Data') for r in records]}")
                             current_record = None
                             for r in reversed(records):
@@ -737,13 +719,10 @@ def main():
                                 if not data_val:
                                     continue
                                 data_val_str = str(data_val).strip()
-                                # Tenta normalizar e comparar datas
                                 matched = False
-                                # Primeiro faz uma comparação direta (mais rápida)
                                 if data_val_str == current_date:
                                     matched = True
                                 else:
-                                    # Tenta formatos flexíveis
                                     for fmt in ["%d/%m", "%d/%m/%Y", "%d/%m/%y", "%d-%m", "%d-%m-%Y", "%d-%m-%y"]:
                                         try:
                                             dt_val = datetime.strptime(re.sub(r'\s+', '', data_val_str), fmt)
@@ -753,7 +732,6 @@ def main():
                                                 break
                                         except Exception:
                                             continue
-                                    # Também aceita datas tipo d/m (sem zero à esquerda)
                                     if not matched:
                                         try:
                                             parts = re.split(r'[/-]', data_val_str)
@@ -778,8 +756,7 @@ def main():
                             mc_geral = clean_value(current_record.get('MC Geral', '0,00'))
                             print(f"Valores encontrados para {site_name}: Investimento={investimento}, Receita={receita}, ROAS={roas_geral}, MC={mc_geral}")
                             
-                            # Detecta se a receita está em dólar ou em reais
-                            # Mais preciso que apenas verificar '$'
+
                             is_dolar = is_dollar_value(receita)
                             print(f"[DEBUG] Receita '{receita}' detectada como {'DÓLAR' if is_dolar else 'REAL'}")
                             
@@ -789,22 +766,18 @@ def main():
                             else:
                                 site_receita_real += to_float(receita)
                             site_mc += to_float(mc_geral)
-                            site_roas = roas_geral  # Armazena o ROAS lido
+                            site_roas = roas_geral
                             roas_lidos.append(to_float(roas_geral))
                             
-                        # Envia mensagem do site (soma de todas as abas do mês vigente)
                         if site_investimento > 0 or site_receita_real > 0 or site_receita_dolar > 0 or encontrou_registro:
-                            # Usa o ROAS lido diretamente da planilha, não calcula
                             roas_geral_str = site_roas
                             
-                            # Se o ROAS está vazio, usa um valor padrão
                             if not roas_geral_str or roas_geral_str == '0,00':
                                 roas_geral_str = '0,00'
                                 
                             roas_emoji = get_roas_emoji(roas_geral_str)
                             mc_emoji = get_mc_emoji(str(site_mc))
                             
-                            # Formata mensagem com ambas as receitas se necessário
                             investimento_str = f"R$ {site_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                             receita_real_str = f"R$ {site_receita_real:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if site_receita_real > 0 else "R$ 0,00"
                             receita_dolar_str = f"$ {site_receita_dolar:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if site_receita_dolar > 0 else "$ 0,00"
@@ -834,7 +807,6 @@ def main():
                         if not encontrou_registro:
                             send_to_slack(f":warning: Site {site_name} não teve dados para o dia {current_date}.", webhook_url)
                         
-                        # Adiciona separador após cada site, exceto o último antes do resumo
                         sites_processados += 1
                         if sites_processados < total_sites:
                             send_to_slack('<==================================:small_blue_diamond:===============================>', webhook_url)
@@ -852,14 +824,11 @@ def main():
                             print(traceback.format_exc())
                             retry = False
 
-                # Espera entre sites para evitar rate limit
                 wait_between_sites = random.uniform(3, 5)
                 print(f"Aguardando {wait_between_sites:.2f}s antes de processar o próximo site...")
                 time.sleep(wait_between_sites)
 
-            # Envia o resumo total do canal
             try:
-                # Soma todos os ROAS lidos dos sites/abas
                 roas_total = sum(roas_lidos)
                 roas_total_str = f"{roas_total:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                 investimento_str = f"R$ {total_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')

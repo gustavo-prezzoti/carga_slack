@@ -4,7 +4,6 @@ import logging
 import sys
 from typing import Dict, List, Any
 
-# Adiciona o diretório pai ao path para poder importar o config
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import PROCESSED_DATA_FILE
 
@@ -31,7 +30,6 @@ class DataManager:
             with open(self.storage_file, 'r') as f:
                 data = json.load(f)
                 if isinstance(data, list):
-                    # Compatibilidade retroativa: converte lista para dict agrupado
                     grouped = {}
                     for rec in data:
                         titulo = rec.get('titulo', 'OUTROS')
@@ -71,9 +69,8 @@ class DataManager:
         titulo = record.get('titulo', 'OUTROS')
         if titulo not in processed_data:
             processed_data[titulo] = []
-        # Verifica se o registro já existe
         for existing in processed_data[titulo]:
             if existing.get(key_field) == record.get(key_field):
-                return  # Registro já existe, não adiciona novamente
+                return  
         processed_data[titulo].append(record)
         self.save_processed_data(processed_data) 
