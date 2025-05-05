@@ -268,15 +268,18 @@ def process_current_date_only(sheets_url: str, site_name: str) -> None:
             total_mc = to_float(mc_geral)
             roas_site = total_receita / total_investimento if total_investimento > 0 else 0.0
             roas_site_str = f"{roas_site:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
-            resumo_msg = (
-                f"*Resumo do canal:*\n"
-                f"Investimento total: R$ {total_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') + "\n"
-                f"Receita total: R$ {total_receita:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') + "\n"
-                f"ROAS total: {roas_site_str}\n"
+            squad_name = config.get('squad_name')
+            resumo_title = f"*Resumo da {squad_name}:*" if squad_name else "*Resumo do canal:*"
+            resumo_msg = [
+                resumo_title,
+                f"Investimento total: R$ {total_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') + "\n",
+                f"Receita total: R$ {total_receita:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') + "\n",
+                f"ROAS total: {roas_site_str}\n",
                 f"MC total: R$ {total_mc:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
-            )
+            ]
+            resumo_final = "\n".join(resumo_msg)
             send_to_slack('```========================= RESUMO =========================```', webhook_url)
-            send_to_slack(resumo_msg, webhook_url)
+            send_to_slack(resumo_final, webhook_url)
         except Exception as e:
             logging.error(f"Erro ao calcular/enviar resumo do grupo: {e}")
             send_to_slack(f"Erro ao enviar resumo: {e}", webhook_url)
@@ -506,18 +509,20 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                     total_receita_dolar = to_float(site_receita_dolar)
                     total_mc = to_float(site_mc)
                     total_receita = total_receita_real + total_receita_dolar
-                    roas_total = sum(roas_lidos)
-                    roas_total_str = f"{roas_total:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+                    roas_medio = (total_receita_real + total_receita_dolar) / total_investimento if total_investimento > 0 else 0.0
+                    roas_medio_str = f"{roas_medio:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                     investimento_str = f"R$ {total_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                     receita_real_str = f"R$ {total_receita_real:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                     receita_dolar_str = f"$ {total_receita_dolar:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                     mc_str = f"R$ {total_mc:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+                    squad_name = config.get('squad_name')
+                    resumo_title = f"*Resumo Squad {squad_name}:*" if squad_name else "*Resumo do canal:*"
                     resumo_msg = [
-                        f"*Resumo do canal:*",
+                        resumo_title,
                         f"Investimento total: {investimento_str}",
-                        f"Receita total (R$): {receita_real_str}",
-                        f"Receita total ($): {receita_dolar_str}",
-                        f"ROAS total: {roas_total_str}",
+                        f"Receita total em reais: {receita_real_str}",
+                        f"Receita total em dólares: {receita_dolar_str}",
+                        f"ROAS médio: {roas_medio_str}",
                         f"MC total: {mc_str}"
                     ]
                     resumo_final = "\n".join(resumo_msg)
@@ -829,18 +834,20 @@ def main():
                 time.sleep(wait_between_sites)
 
             try:
-                roas_total = sum(roas_lidos)
-                roas_total_str = f"{roas_total:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+                roas_medio = (total_receita_real + total_receita_dolar) / total_investimento if total_investimento > 0 else 0.0
+                roas_medio_str = f"{roas_medio:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                 investimento_str = f"R$ {total_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                 receita_real_str = f"R$ {total_receita_real:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                 receita_dolar_str = f"$ {total_receita_dolar:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
                 mc_str = f"R$ {total_mc:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+                squad_name = config.get('squad_name')
+                resumo_title = f"*Resumo Squad {squad_name}:*" if squad_name else "*Resumo do canal:*"
                 resumo_msg = [
-                    f"*Resumo do canal:*",
+                    resumo_title,
                     f"Investimento total: {investimento_str}",
                     f"Receita total em reais: {receita_real_str}",
                     f"Receita total em dólares: {receita_dolar_str}",
-                    f"ROAS total: {roas_total_str}",
+                    f"ROAS médio: {roas_medio_str}",
                     f"MC total: {mc_str}"
                 ]
                 resumo_final = "\n".join(resumo_msg)

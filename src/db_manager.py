@@ -166,7 +166,7 @@ class DBManager:
             cursor = self.connection.cursor(dictionary=True)
             
             cursor.execute("""
-            SELECT s.name, s.sheet_url, c.investimento_idx, c.receita_idx, c.roas_idx, c.mc_idx, ch.webhook_url
+            SELECT s.name, s.sheet_url, c.investimento_idx, c.receita_idx, c.roas_idx, c.mc_idx, ch.webhook_url, ch.name as squad_name
             FROM sites s
             JOIN column_indices c ON s.id = c.site_id
             LEFT JOIN slack_channels ch ON s.slack_channel_id = ch.id
@@ -184,7 +184,8 @@ class DBManager:
                         "roas": result["roas_idx"],
                         "mc": result["mc_idx"]
                     },
-                    "slack_webhook_url": result["webhook_url"]
+                    "slack_webhook_url": result["webhook_url"],
+                    "squad_name": result.get("squad_name")
                 }
             
             return self.get_default_config()
