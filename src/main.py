@@ -867,9 +867,9 @@ if __name__ == "__main__":
             print(f"[Agendador] Executando rotina em {datetime.now(pytz.timezone('America/Sao_Paulo')).strftime('%d/%m/%Y %H:%M')}")
             main()
 
-        print("Agendador: executando às 00:20, 03:20, 06:20, 09:20, 12:20, 15:20, 18:20 e 21:20. Pressione Ctrl+C para sair.")
+        print("Agendador: executando às 00:22, 03:22, 06:22, 09:22, 12:22, 15:22, 18:22 e 21:22. Pressione Ctrl+C para sair.")
         for hour in range(0, 24, 3):
-            schedule.every().day.at(f"{hour:02d}:20").do(job)
+            schedule.every().day.at(f"{hour:02d}:22").do(job)
         while True:
             schedule.run_pending()
             time.sleep(5)
