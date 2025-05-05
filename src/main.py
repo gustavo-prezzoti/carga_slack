@@ -169,11 +169,9 @@ def send_to_slack(message: str, webhook_url: str) -> bool:
         return False
 
 def get_current_date_str() -> str:
-    """Retorna a data de 1 dia anterior no formato DD/MM."""
+    """Retorna a data atual no formato DD/MM."""
     now = datetime.now()
-    from datetime import timedelta
-    yesterday = now - timedelta(days=1)
-    return f"{yesterday.day:02d}/{yesterday.month:02d}"
+    return f"{now.day:02d}/{now.month:02d}"
 
 def get_brasilia_time_str():
     tz = pytz.timezone('America/Sao_Paulo')
