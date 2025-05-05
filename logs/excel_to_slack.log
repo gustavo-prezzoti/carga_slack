@@ -10673,3 +10673,89 @@ MC total: R$ 710,41
 2025-05-05 12:07:06,688 - root - INFO - Resposta do Slack: status=200, body=ok
 2025-05-05 12:07:06,689 - root - INFO - Enviando mensagem ao Slack: <==================================:small_blue_diamond:===============================>
 2025-05-05 12:07:06,890 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-05 12:13:09,663 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-05 12:13:09,664 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-05 12:13:09,664 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-05 12:13:09,735 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-05 12:13:10,180 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-05 12:13:11,363 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Tech Pra Todos
+2025-05-05 12:13:11,625 - root - INFO - Abas encontradas via API: [{'name': 'Abril 2025 - ADX', 'id': '1046712131'}, {'name': 'Maio 2025 - ADX', 'id': '1261087214'}]
+2025-05-05 12:13:12,466 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - ADX': 34 registros
+2025-05-05 12:13:12,469 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Tech Pra Todos :warning: :warning:
+Investimento: *R$ 14,05*
+Receita: *$ 0,37*
+ROAS: *0,14*
+MC: *-R$ 12,25*
+2025-05-05 12:13:12,703 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-05 12:13:12,704 - root - INFO - Enviando mensagem ao Slack: <==================================:small_blue_diamond:===============================>
+2025-05-05 12:13:12,880 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-05 12:13:16,434 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-05 12:13:17,277 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Mundo do jogo
+2025-05-05 12:13:17,707 - root - INFO - Abas encontradas via API: [{'name': 'Outubro 2024 - adx', 'id': '891039983'}, {'name': 'Novembro 2024 - adx', 'id': '1817412801'}, {'name': 'Dezembro 2024 - adx', 'id': '1150155981'}, {'name': 'Janeiro 2025 - adx', 'id': '1700000681'}, {'name': 'Fevereiro 2025 - adx', 'id': '1665098896'}, {'name': 'Março 2025 - adx', 'id': '927836319'}, {'name': 'Abril 2025 - adx', 'id': '1622211260'}, {'name': 'Maio 2025 - adx', 'id': '96447186'}, {'name': 'ot agosto 2024 - adx', 'id': '1656934025'}]
+2025-05-05 12:13:18,512 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-05 12:13:18,515 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Mundo do Jogo :moneybag: :star-struck:
+Investimento: *R$ 564,05*
+Receita: *$ 158,44*
+ROAS: *1,46*
+MC: *R$ 208,47*
+2025-05-05 12:13:18,719 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-05 12:13:18,719 - root - INFO - Enviando mensagem ao Slack: <==================================:small_blue_diamond:===============================>
+2025-05-05 12:13:18,901 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-05 12:13:23,950 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-05 12:13:24,800 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Jornal popular
+2025-05-05 12:13:25,160 - root - INFO - Abas encontradas via API: [{'name': 'Janeiro 2024 - adx', 'id': '753993131'}, {'name': 'Fevereiro 2024 - adx', 'id': '1149399647'}, {'name': 'Março 2024 - adx', 'id': '1145603197'}, {'name': 'Abril 2024 - adx', 'id': '48866348'}, {'name': 'Maio 2024 - adx', 'id': '1733184203'}, {'name': 'Junho 2024 - adx', 'id': '1095089814'}, {'name': 'Julho 2024 - adx', 'id': '1762338257'}, {'name': 'Agosto 2024 - adx', 'id': '2009441387'}, {'name': 'Setembro 2024 - adx', 'id': '1953323453'}, {'name': 'Outubro 2024 - adx', 'id': '1199245257'}, {'name': 'Novembro 2024 - adx', 'id': '1803927037'}, {'name': 'Dezembro 2024 - adx', 'id': '1958470144'}, {'name': 'Janeiro 2025 - adx', 'id': '1813558064'}, {'name': 'Fevereiro 2025 - adx', 'id': '672651145'}, {'name': 'Março 2025 - adx', 'id': '655559473'}, {'name': 'Abril 2025 - adx', 'id': '1046712131'}, {'name': 'Maio 2025 - adx', 'id': '1709072668'}, {'name': 'Ot junho 2024 - adx', 'id': '1103364238'}, {'name': 'Ot Abr maio 2024 - adx', 'id': '1452113160'}, {'name': 'Ot mar 2024 - adx', 'id': '1428567174'}, {'name': 'Ot jan e fev 2024 - adx', 'id': '724643051'}]
+2025-05-05 12:13:26,067 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-05 12:13:26,070 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Jornal Popular :money_with_wings: :star-struck:
+Investimento: *R$ 1.048,12*
+Receita: *$ 313,05*
+ROAS: *1,55*
+MC: *R$ 478,24*
+2025-05-05 12:13:26,272 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-05 12:13:26,272 - root - INFO - Enviando mensagem ao Slack: <==================================:small_blue_diamond:===============================>
+2025-05-05 12:13:26,454 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-05 12:16:00,308 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-05 12:16:00,309 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-05 12:16:00,309 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-05 12:16:00,383 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-05 12:16:00,843 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-05 12:16:01,108 - root - ERROR - Erro ao conectar à planilha: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+Traceback (most recent call last):
+  File "C:\Users\gusta\Desktop\carga\carga_slack\src\google_sheets_processor.py", line 40, in __init__
+    self.spreadsheet = self.gc.open_by_url(self.spreadsheet_url)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\gspread\client.py", line 227, in open_by_url
+    return self.open_by_key(extract_id_from_url(url))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\gspread\client.py", line 206, in open_by_key
+    spreadsheet = Spreadsheet(self, {"id": key})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\gspread\spreadsheet.py", line 37, in __init__
+    metadata = self.fetch_sheet_metadata()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\gspread\spreadsheet.py", line 247, in fetch_sheet_metadata
+    r = self.client.request("get", url, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\gspread\client.py", line 80, in request
+    response = getattr(self.session, method)(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\google\auth\transport\requests.py", line 533, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\google\auth\credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\google\auth\credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\google\oauth2\_client.py", line 270, in _token_endpoint_request
+    _handle_error_response(response_data, retryable_error)
+  File "C:\Users\gusta\AppData\Roaming\Python\Python312\site-packages\google\oauth2\_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+
