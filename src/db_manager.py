@@ -11,7 +11,7 @@ from typing import Dict, Any, List, Optional, Tuple
 class DBManager:
     """Classe para gerenciar conexões e operações no banco de dados MySQL."""
     
-    def __init__(self, host="localhost", port=3306, user="root", password="", database="site_configs"):
+    def __init__(self, host="212.85.10.1", port=3306, user="slackuser", password="Cap0199**", database="carga_slack_db"):
         """
         Inicializa o gerenciador de banco de dados.
         
