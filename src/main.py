@@ -169,7 +169,7 @@ def send_to_slack(message: str, webhook_url: str) -> bool:
         return False
 
 def get_current_date_str() -> str:
-    """Retorna a data atual no formato DD/MM."""
+    """Retorna a data atual no formato DD/MM.""" 
     now = datetime.now()
     return f"{now.day:02d}/{now.month:02d}"
 
@@ -867,9 +867,9 @@ if __name__ == "__main__":
             print(f"[Agendador] Executando rotina em {datetime.now(pytz.timezone('America/Sao_Paulo')).strftime('%d/%m/%Y %H:%M')}")
             main()
 
-        print("Agendador: executando às 00:10, 03:10, 06:10, 09:10, 12:10, 15:10, 18:10 e 21:10. Pressione Ctrl+C para sair.")
+        print("Agendador: executando às 00:15, 03:15, 06:15, 09:15, 12:15, 15:15, 18:15 e 21:15. Pressione Ctrl+C para sair.")
         for hour in range(0, 24, 3):
-            schedule.every().day.at(f"{hour:02d}:10").do(job)
+            schedule.every().day.at(f"{hour:02d}:15").do(job)
         while True:
             schedule.run_pending()
             time.sleep(5)
