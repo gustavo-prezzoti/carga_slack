@@ -114,40 +114,32 @@ def get_roas_emoji(roas_value):
 def get_mc_emoji(mc_value):
     """
     Retorna o emoji apropriado com base no valor monetário do MC.
-    MC < 0: :warning: (negativo)
+e    MC < -100: :rotating_light:
+    -100 <= MC < 0: :warning:
     0 <= MC <= 100: :moneybag:
     100 < MC <= 1000: :star-struck:
     MC > 1000: :money_with_wings:
     """
     try:
-
         mc_str = str(mc_value).replace('R$', '').strip()
-        
-
         if ',' in mc_str and '.' in mc_str:
-
             mc_str = mc_str.replace('.', '').replace(',', '.')
         elif ',' in mc_str:
-
             mc_str = mc_str.replace(',', '.')
-            
-
         is_negative = mc_str.startswith('-')
         if is_negative:
             mc_str = mc_str[1:]
-            
-
         mc_num = float(mc_str)
         if is_negative:
             mc_num = -mc_num
-            
-
-        if mc_num < 0:
+        if mc_num < -100:
+            return ":rotating_light:"
+        elif mc_num < 0:
             return ":warning:"
         elif mc_num <= 100:
             return ":moneybag:"
         elif mc_num <= 1000:
-            return ":star-struck:" 
+            return ":star-struck:"
         else:
             return ":money_with_wings:"
     except Exception as e:
@@ -272,7 +264,6 @@ def process_current_date_only(sheets_url: str, site_name: str) -> None:
                 resumo_title,
                 f"Investimento total: R$ {total_investimento:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') + "\n",
                 f"Receita total: R$ {total_receita:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') + "\n",
-                f"ROAS total: {roas_site_str}\n",
                 f"MC total: R$ {total_mc:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
             ]
             resumo_final = "\n".join(resumo_msg)
@@ -520,7 +511,6 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                         f"Investimento total: {investimento_str}",
                         f"Receita total em reais: {receita_real_str}",
                         f"Receita total em dólares: {receita_dolar_str}",
-                        f"ROAS médio: {roas_medio_str}",
                         f"MC total: {mc_str}"
                     ]
                     resumo_final = "\n".join(resumo_msg)
@@ -845,7 +835,6 @@ def main():
                     f"Investimento total: {investimento_str}",
                     f"Receita total em reais: {receita_real_str}",
                     f"Receita total em dólares: {receita_dolar_str}",
-                    f"ROAS médio: {roas_medio_str}",
                     f"MC total: {mc_str}"
                 ]
                 resumo_final = "\n".join(resumo_msg)
