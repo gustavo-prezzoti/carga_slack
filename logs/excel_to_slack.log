@@ -11103,3 +11103,66 @@ MC total: R$ 2.206,55
 2025-05-05 21:22:44,528 - root - INFO - Resposta do Slack: status=200, body=ok
 2025-05-05 21:22:44,529 - root - INFO - Enviando mensagem ao Slack: <==================================:small_blue_diamond:===============================>
 2025-05-05 21:22:44,821 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:21:22,305 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:21:22,305 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:21:22,306 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:22:49,669 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:22:49,669 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:22:49,669 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:23:21,104 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:23:21,105 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:23:21,105 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:23:59,613 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:23:59,614 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:23:59,614 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:23:59,640 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:23:59,658 - root - ERROR - Erro ao listar sites: 1046 (3D000): No database selected
+2025-05-07 10:24:20,578 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:24:20,578 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:24:20,579 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:24:20,603 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:24:20,619 - root - ERROR - Erro ao listar sites: 1046 (3D000): No database selected
+2025-05-07 10:24:31,246 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:24:31,247 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:24:31,247 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:24:31,272 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:24:31,289 - root - ERROR - Erro ao listar sites: 1046 (3D000): No database selected
+2025-05-07 10:26:38,781 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:26:38,782 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:26:38,782 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:27:30,474 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:27:30,475 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:27:30,475 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:28:11,731 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:28:11,732 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:28:11,732 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:29:35,890 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:29:35,891 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:29:35,891 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:29:51,059 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:29:51,059 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:29:51,059 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:29:51,083 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:29:51,097 - root - ERROR - Erro ao listar sites: 1046 (3D000): No database selected
+2025-05-07 10:30:46,267 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:30:46,268 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:30:46,268 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:30:46,295 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:31:43,447 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:31:43,447 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:31:43,448 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:44:30,875 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:44:30,876 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:44:30,876 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:44:30,900 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:44:31,268 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:44:32,602 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Tech Pra Todos
+2025-05-07 10:44:33,115 - root - INFO - Abas encontradas via API: [{'name': 'Abril 2025 - ADX', 'id': '1046712131'}, {'name': 'Maio 2025 - ADX', 'id': '1261087214'}]
+2025-05-07 10:44:34,245 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - ADX': 32 registros
+2025-05-07 10:44:34,249 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Tech Pra Todos :warning: :warning:
+Investimento: *R$ 9,02*
+Receita: *$ 1,04*
+ROAS: *0,60*
+MC: *-R$ 3,95*
+2025-05-07 10:44:34,437 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:44:34,439 - root - INFO - Enviando mensagem ao Slack: <==================================:small_blue_diamond:===============================>

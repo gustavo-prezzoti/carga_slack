@@ -41,18 +41,11 @@ class DBManager:
                 host=self.host,
                 port=self.port,
                 user=self.user,
-                password=self.password
+                password=self.password,
+                database=self.database
             )
             
             if self.connection.is_connected():
-                cursor = self.connection.cursor()
-                
-
-                cursor.execute(f"CREATE DATABASE IF NOT EXISTS {self.database}")
-                cursor.execute(f"USE {self.database}")
-                
-  
-                self._create_tables()
                 
                 logging.info(f"Conectado ao MySQL: {self.host}:{self.port}, banco de dados: {self.database}")
                 return True

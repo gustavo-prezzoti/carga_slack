@@ -273,8 +273,6 @@ def process_current_date_only(sheets_url: str, site_name: str) -> None:
             logging.error(f"Erro ao calcular/enviar resumo do grupo: {e}")
             send_to_slack(f"Erro ao enviar resumo: {e}", webhook_url)
         
-        send_to_slack('<==================================:small_blue_diamond:===============================>', webhook_url)
-        
         break 
 
 def run_monitor(sheets_url: str, site_name: str, interval_seconds: int = 10):
@@ -380,7 +378,6 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                 if not send_to_slack(mensagem, webhook_url): 
                     sucesso = False
                     stats['falhas'] += 1
-                send_to_slack('<==================================:small_blue_diamond:===============================>', webhook_url)
 
             try:
                 sheets_processor = GoogleSheetsProcessor(sheet_url, site_name=site_name)
@@ -802,7 +799,7 @@ def main():
                         
                         sites_processados += 1
                         if sites_processados < total_sites:
-                            send_to_slack('<==================================:small_blue_diamond:===============================>', webhook_url)
+                            pass
                         
                         retry = False
                         
@@ -840,7 +837,6 @@ def main():
                 resumo_final = "\n".join(resumo_msg)
                 send_to_slack('```========================= RESUMO =========================```', webhook_url)
                 send_to_slack(resumo_final, webhook_url)
-                send_to_slack('<==================================:small_blue_diamond:===============================>', webhook_url)
             except Exception as e:
                 send_to_slack(f"Erro ao enviar resumo do canal: {e}", webhook_url)
 
