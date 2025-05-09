@@ -11166,3 +11166,173 @@ ROAS: *0,60*
 MC: *-R$ 3,95*
 2025-05-07 10:44:34,437 - root - INFO - Resposta do Slack: status=200, body=ok
 2025-05-07 10:44:34,439 - root - INFO - Enviando mensagem ao Slack: <==================================:small_blue_diamond:===============================>
+2025-05-07 10:49:32,875 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-05-07 10:49:32,876 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-05-07 10:49:32,876 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-05-07 10:49:32,900 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:49:33,275 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:49:33,996 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Tech Pra Todos
+2025-05-07 10:49:34,252 - root - INFO - Abas encontradas via API: [{'name': 'Abril 2025 - ADX', 'id': '1046712131'}, {'name': 'Maio 2025 - ADX', 'id': '1261087214'}]
+2025-05-07 10:49:34,879 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - ADX': 32 registros
+2025-05-07 10:49:34,882 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Tech Pra Todos :warning: :warning:
+Investimento: *R$ 9,02*
+Receita: *$ 1,04*
+ROAS: *0,60*
+MC: *-R$ 3,95*
+2025-05-07 10:49:35,080 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:49:38,960 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:49:39,780 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Mundo do jogo
+2025-05-07 10:49:40,135 - root - INFO - Abas encontradas via API: [{'name': 'Outubro 2024 - adx', 'id': '891039983'}, {'name': 'Novembro 2024 - adx', 'id': '1817412801'}, {'name': 'Dezembro 2024 - adx', 'id': '1150155981'}, {'name': 'Janeiro 2025 - adx', 'id': '1700000681'}, {'name': 'Fevereiro 2025 - adx', 'id': '1665098896'}, {'name': 'Março 2025 - adx', 'id': '927836319'}, {'name': 'Abril 2025 - adx', 'id': '1622211260'}, {'name': 'Maio 2025 - adx', 'id': '96447186'}, {'name': 'ot agosto 2024 - adx', 'id': '1656934025'}]
+2025-05-07 10:49:40,765 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:49:40,769 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Mundo do Jogo :moneybag: :star-struck:
+Investimento: *R$ 537,04*
+Receita: *$ 143,94*
+ROAS: *1,39*
+MC: *R$ 164,78*
+2025-05-07 10:49:40,974 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:49:45,377 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:49:46,175 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Jornal popular
+2025-05-07 10:49:46,536 - root - INFO - Abas encontradas via API: [{'name': 'Janeiro 2024 - adx', 'id': '753993131'}, {'name': 'Fevereiro 2024 - adx', 'id': '1149399647'}, {'name': 'Março 2024 - adx', 'id': '1145603197'}, {'name': 'Abril 2024 - adx', 'id': '48866348'}, {'name': 'Maio 2024 - adx', 'id': '1733184203'}, {'name': 'Junho 2024 - adx', 'id': '1095089814'}, {'name': 'Julho 2024 - adx', 'id': '1762338257'}, {'name': 'Agosto 2024 - adx', 'id': '2009441387'}, {'name': 'Setembro 2024 - adx', 'id': '1953323453'}, {'name': 'Outubro 2024 - adx', 'id': '1199245257'}, {'name': 'Novembro 2024 - adx', 'id': '1803927037'}, {'name': 'Dezembro 2024 - adx', 'id': '1958470144'}, {'name': 'Janeiro 2025 - adx', 'id': '1813558064'}, {'name': 'Fevereiro 2025 - adx', 'id': '672651145'}, {'name': 'Março 2025 - adx', 'id': '655559473'}, {'name': 'Abril 2025 - adx', 'id': '1046712131'}, {'name': 'Maio 2025 - adx', 'id': '1709072668'}, {'name': 'Ot junho 2024 - adx', 'id': '1103364238'}, {'name': 'Ot Abr maio 2024 - adx', 'id': '1452113160'}, {'name': 'Ot mar 2024 - adx', 'id': '1428567174'}, {'name': 'Ot jan e fev 2024 - adx', 'id': '724643051'}]
+2025-05-07 10:49:47,289 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:49:47,292 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Jornal Popular :moneybag: :star-struck:
+Investimento: *R$ 880,09*
+Receita: *$ 221,83*
+ROAS: *1,31*
+MC: *R$ 201,50*
+2025-05-07 10:49:47,474 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:49:52,278 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:49:53,038 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 TDN
+2025-05-07 10:49:53,412 - root - INFO - Abas encontradas via API: [{'name': 'Junho 2024 - adx', 'id': '1084203077'}, {'name': 'Julho 2024 - adx', 'id': '1110174973'}, {'name': 'Agosto 2024 - adx', 'id': '1482197589'}, {'name': 'Setembro 2024 - adx', 'id': '95709424'}, {'name': 'Outubro 2024 - adx', 'id': '1301847704'}, {'name': 'Novembro 2024 - adx', 'id': '1440119151'}, {'name': 'Dezembro 2024 - adx', 'id': '1028366548'}, {'name': 'janeiro 2025 - adx', 'id': '2017241812'}, {'name': 'Fevereiro 2025 - adx', 'id': '389494582'}, {'name': 'Março 2025 - adx', 'id': '1573150156'}, {'name': 'Abril 2025 - adx', 'id': '2053445223'}, {'name': 'Maio 2025 - adx', 'id': '1241091182'}, {'name': 'Ot junho 2024 - adx', 'id': '1970126649'}]
+2025-05-07 10:49:54,065 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:49:54,069 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Tudo de Nerd :moneybag: :moneybag:
+Investimento: *R$ 60,65*
+Receita: *$ 17,07*
+ROAS: *1,46*
+MC: *R$ 22,58*
+2025-05-07 10:49:54,254 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:49:58,258 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:49:59,005 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Victory Ignite
+2025-05-07 10:49:59,305 - root - INFO - Abas encontradas via API: [{'name': 'Abril 2025 - ADX', 'id': '1046712131'}, {'name': 'Maio 2025 - ADX', 'id': '338322253'}]
+2025-05-07 10:49:59,932 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - ADX': 32 registros
+2025-05-07 10:49:59,934 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Victory Ignite :warning: :warning:
+Investimento: *R$ 2,02*
+Receita: *R$ 0,00*
+ROAS: *0,00*
+MC: *-R$ 2,02*
+2025-05-07 10:50:00,131 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:04,194 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:04,987 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 thaRico
+2025-05-07 10:50:05,265 - root - INFO - Abas encontradas via API: [{'name': 'Abril 2025 - ADX', 'id': '1046712131'}, {'name': 'Maio 2025 - ADX', 'id': '516780076'}]
+2025-05-07 10:50:05,896 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - ADX': 32 registros
+2025-05-07 10:50:05,898 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização thaRico :moneybag: :moneybag:
+Investimento: *R$ 14,73*
+Receita: *$ 3,97*
+ROAS: *1,40*
+MC: *R$ 4,63*
+2025-05-07 10:50:06,092 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:11,028 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:11,722 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 RNB
+2025-05-07 10:50:12,103 - root - INFO - Abas encontradas via API: [{'name': 'Janeiro 2024 - adx', 'id': '923734365'}, {'name': 'Dezembro 2024 - adx', 'id': '1595179423'}, {'name': 'Fevereiro 2024 - adx', 'id': '497238567'}, {'name': 'Janeiro 2025 - adx', 'id': '1270073463'}, {'name': 'Março 2024 - adx', 'id': '1226155237'}, {'name': 'Abril 2024 - adx', 'id': '1015402076'}, {'name': 'Maio 2024 - adx', 'id': '319767123'}, {'name': 'Junho 2024 - adx', 'id': '850985786'}, {'name': 'Julho 2024 - adx', 'id': '1514998924'}, {'name': 'Agosto 2024 - adx', 'id': '1819775204'}, {'name': 'Setembro 2024 - adx', 'id': '976318020'}, {'name': 'Outubro 2024 - adx', 'id': '176389326'}, {'name': 'Novembro 2024 - adx', 'id': '1662905174'}, {'name': 'Fevereiro 2025 - adx', 'id': '859123610'}, {'name': 'Março 2025 - adx', 'id': '1007347932'}, {'name': 'Abril 2025 - adx', 'id': '1440636250'}, {'name': 'Maio 2025 - adx', 'id': '1442204480'}, {'name': 'Ot julho 2024 - adx', 'id': '939916789'}, {'name': 'Ot junho 2024 - adx', 'id': '13983647'}, {'name': 'Ot maio 2024 - adx', 'id': '1091323246'}, {'name': 'Ot Abr 2024 - adx', 'id': '391845527'}, {'name': 'Ot Mar 2024 - adx', 'id': '1854867294'}, {'name': 'Ot Fev 2024 - adx', 'id': '1742535865'}, {'name': 'Ot Jan 2024 - adx', 'id': '850678591'}]
+2025-05-07 10:50:12,811 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:50:12,814 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização RNB :moneybag: :moneybag:
+Investimento: *R$ 1.498,53*
+Receita: *$ 320,47*
+ROAS: *1,11*
+MC: *R$ 64,01*
+2025-05-07 10:50:13,016 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:17,118 - root - INFO - Enviando mensagem ao Slack: ```========================= RESUMO =========================```
+2025-05-07 10:50:17,316 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:17,316 - root - INFO - Enviando mensagem ao Slack: *Resumo Squad A:*
+Investimento total: R$ 3.002,08
+Receita total em reais: R$ 0,00
+Receita total em dólares: $ 708,32
+MC total: R$ 451,53
+2025-05-07 10:50:17,497 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:17,605 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:18,395 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Space Up
+2025-05-07 10:50:18,679 - root - INFO - Abas encontradas via API: [{'name': 'Outubro 2024 - adx', 'id': '891039983'}, {'name': 'Novembro 2024 - adx', 'id': '1381012598'}, {'name': 'Dezembro 2024 - adx', 'id': '544808041'}, {'name': 'Janeiro 2025 - adx', 'id': '881734054'}, {'name': 'Fevereiro 2025 - adx', 'id': '1865693803'}, {'name': 'Março 2025 - adx', 'id': '1946711556'}, {'name': 'Abril 2025 - adx', 'id': '1304324802'}, {'name': 'Maio 2025 - adx', 'id': '1689754430'}, {'name': 'ot agosto 2024 - adx', 'id': '1656934025'}]
+2025-05-07 10:50:19,319 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:50:19,321 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Space Up :moneybag: :star-struck:
+Investimento: *R$ 901,96*
+Receita: *$ 246,20*
+ROAS: *1,42*
+MC: *R$ 298,46*
+2025-05-07 10:50:19,979 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:23,900 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:24,848 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Coisas da TV
+2025-05-07 10:50:25,275 - root - INFO - Abas encontradas via API: [{'name': 'Janeiro 2024 - adx', 'id': '82772752'}, {'name': 'Fevereiro 2024 - adx', 'id': '1599436218'}, {'name': 'Março 2024 - adx', 'id': '727148959'}, {'name': 'Abril 2024 - adx', 'id': '1194801395'}, {'name': 'Maio 2024 - adx', 'id': '460513807'}, {'name': 'Junho 2024 - adx', 'id': '1084203077'}, {'name': 'Julho 2024 - adx', 'id': '1397652366'}, {'name': 'Agosto 2024 - adx', 'id': '1221701671'}, {'name': 'Setembro 2024 - adx', 'id': '1985698820'}, {'name': 'Outubro 2024 - adx', 'id': '989413563'}, {'name': 'Novembro 2024 - adx', 'id': '1988008389'}, {'name': 'Dezembro 2024 - adx', 'id': '2112349739'}, {'name': 'janeiro 2025 - adx', 'id': '751384237'}, {'name': 'Fevereiro 2025 - adx', 'id': '1214865724'}, {'name': 'Março 2025 - adx', 'id': '164349094'}, {'name': 'Abril 2025 - adx', 'id': '1846992443'}, {'name': 'Maio 2025 - adx', 'id': '685791098'}, {'name': 'Ot agosto 2024 - adx', 'id': '386393815'}, {'name': 'Ot julho 2024 - adx', 'id': '2081801388'}, {'name': 'Ot junho 2024 - adx', 'id': '1970126649'}, {'name': 'Ot maio 2024 - adx', 'id': '1208632140'}, {'name': 'Ot Abr 2024 - adx', 'id': '789973243'}, {'name': 'Ot Mar 2024 - adx', 'id': '1483122517'}, {'name': 'Ot Fev 2024 - adx', 'id': '1993804290'}, {'name': 'Ot Jan 2024 - adx', 'id': '308526250'}]
+2025-05-07 10:50:26,121 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:50:26,125 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Coisas da TV :moneybag: :moneybag:
+Investimento: *R$ 35,41*
+Receita: *R$ 45,49*
+ROAS: *1,17*
+MC: *R$ 3,50*
+2025-05-07 10:50:26,321 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:31,377 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:32,265 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 NG
+2025-05-07 10:50:32,835 - root - INFO - Abas encontradas via API: [{'name': 'Janeiro 2024 - adx', 'id': '155154243'}, {'name': 'Fevereiro 2024 - adx', 'id': '1411986341'}, {'name': 'Março 2024 - adx', 'id': '1277793202'}, {'name': 'Abril 2024 - adx', 'id': '1264778824'}, {'name': 'Maio 2024 - adx', 'id': '674027034'}, {'name': 'Junho 2024 - adx', 'id': '497217204'}, {'name': 'Julho 2024 - adx', 'id': '514005232'}, {'name': 'Agosto 2024 - adx', 'id': '1031661062'}, {'name': 'Setembro 2024 - adx', 'id': '924772292'}, {'name': 'Outubro 2024 - adx', 'id': '395733596'}, {'name': 'Novembro 2024 - adx', 'id': '2059680707'}, {'name': 'Dezembro 2024 - adx', 'id': '1966214485'}, {'name': 'Janeiro 2025 - adx', 'id': '1939510891'}, {'name': 'Fevereiro 2025 - adx', 'id': '1480257936'}, {'name': 'Março 2025 - adx', 'id': '825743420'}, {'name': 'Abril 2025 - adx', 'id': '1329248282'}, {'name': 'Maio 2025 - adx', 'id': '111552933'}]
+2025-05-07 10:50:33,690 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 39 registros
+2025-05-07 10:50:33,694 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização NG :money_with_wings: :star-struck:
+Investimento: *R$ 840,09*
+Receita: *$ 251,53*
+ROAS: *1,55*
+MC: *R$ 386,31*
+2025-05-07 10:50:33,882 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:37,557 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:38,491 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Trend forward now
+2025-05-07 10:50:38,854 - root - INFO - Abas encontradas via API: [{'name': 'Novembro 2024 - adx', 'id': '1381012598'}, {'name': 'Dezembro 2024 - adx', 'id': '926849307'}, {'name': 'Janeiro 2025 - adx', 'id': '1668178187'}, {'name': 'Fevereiro 2025 - adx', 'id': '1595102069'}, {'name': 'Março 2025 - adx', 'id': '165999206'}, {'name': 'Abril 2025 - adx', 'id': '1906753183'}, {'name': 'Maio 2025 - adx', 'id': '1376181406'}, {'name': 'ot agosto 2024 - adx', 'id': '1656934025'}]
+2025-05-07 10:50:39,596 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:50:39,599 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Trend forward now :money_with_wings: :moneybag:
+Investimento: *R$ 34,21*
+Receita: *$ 11,81*
+ROAS: *1,79*
+MC: *R$ 23,37*
+2025-05-07 10:50:39,799 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:43,983 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:44,860 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Jornal da internet
+2025-05-07 10:50:45,169 - root - INFO - Abas encontradas via API: [{'name': 'Fevereiro 2024 - adx', 'id': '82772752'}, {'name': 'Março 2024 - adx', 'id': '376924430'}, {'name': 'Abril 2024 - adx', 'id': '1057553715'}, {'name': 'Maio 2024 - adx', 'id': '2112322229'}, {'name': 'Junho 2024 - adx', 'id': '1479281641'}, {'name': 'Julho 2024 - adx', 'id': '1429102943'}, {'name': 'Agosto 2024 - adx', 'id': '157352331'}, {'name': 'Setembro 2024 - adx', 'id': '780512835'}, {'name': 'Outubro 2024 - adx', 'id': '934335420'}, {'name': 'Novembro 2024 - adx', 'id': '159164116'}, {'name': 'Dezembro 2024 - adx', 'id': '1502483544'}, {'name': 'Janeiro 2025 - adx', 'id': '1803308383'}, {'name': 'Fevereiro 2025 - adx', 'id': '502973566'}, {'name': 'Março 2025 - adx', 'id': '657555988'}, {'name': 'Abril 2025 - adx', 'id': '1371050887'}, {'name': 'Maio 2025 - adx', 'id': '1795088140'}, {'name': 'Ot fev e mar 2024 - adx', 'id': '1993804290'}]
+2025-05-07 10:50:45,877 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:50:45,879 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Jornal da internet :money_with_wings: :star-struck:
+Investimento: *R$ 133,22*
+Receita: *$ 53,15*
+ROAS: *2,07*
+MC: *R$ 125,93*
+2025-05-07 10:50:46,062 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:50,236 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:51,099 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 3xp
+2025-05-07 10:50:51,490 - root - INFO - Abas encontradas via API: [{'name': 'Setembro 2024 - adx', 'id': '924772292'}, {'name': 'Outubro 2024 - adx', 'id': '891039983'}, {'name': 'Novembro 2024 - adx', 'id': '262826705'}, {'name': 'Dezembro 2024 - adx', 'id': '1504789957'}, {'name': 'Janeiro 2025 - adx', 'id': '1133466129'}, {'name': 'Fevereiro 2025 - adx', 'id': '812516462'}, {'name': 'Março 2025 - adx', 'id': '845531847'}, {'name': 'Abril 2025 - adx', 'id': '1147546703'}, {'name': 'Maio 2025 - adx', 'id': '1498375995'}, {'name': 'ot agosto 2024 - adx', 'id': '1656934025'}]
+2025-05-07 10:50:52,209 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:50:52,211 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização 3xp :warning: :warning:
+Investimento: *R$ 24,41*
+Receita: *$ 4,49*
+ROAS: *0,95*
+MC: *-R$ 2,52*
+2025-05-07 10:50:52,433 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:50:57,021 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:50:58,004 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 Lav Viral
+2025-05-07 10:50:58,431 - root - INFO - Abas encontradas via API: [{'name': 'ot agosto 2024 - adx', 'id': '1656934025'}, {'name': 'Novembro 2024 - adx', 'id': '1381012598'}, {'name': 'Dezembro 2024 - adx', 'id': '1055402831'}, {'name': 'Janeiro 2025 - adx', 'id': '1527792071'}, {'name': 'Fevereiro 2025 - adx', 'id': '662080782'}, {'name': 'Março 2025 - adx', 'id': '700387638'}, {'name': 'Abril 2025 - adx', 'id': '135004901'}, {'name': 'Maio 2025 - adx', 'id': '923674702'}]
+2025-05-07 10:50:59,160 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:50:59,162 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização Lav Viral :money_with_wings: :moneybag:
+Investimento: *R$ 68,28*
+Receita: *$ 26,10*
+ROAS: *1,98*
+MC: *R$ 58,98*
+2025-05-07 10:50:59,351 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:51:04,187 - root - INFO - Conectado ao MySQL: 212.85.10.1:3306, banco de dados: carga_slack_db
+2025-05-07 10:51:04,968 - root - INFO - Conexão com a planilha estabelecida: Daily 2025 AppNews
+2025-05-07 10:51:05,318 - root - INFO - Abas encontradas via API: [{'name': 'Janeiro 2024 - adx', 'id': '82772752'}, {'name': 'Fevereiro 2024 - adx', 'id': '1599436218'}, {'name': 'Março 2024 - adx', 'id': '727148959'}, {'name': 'Abril 2024 - adx', 'id': '1194801395'}, {'name': 'Maio 2024 - adx', 'id': '460513807'}, {'name': 'Junho 2024 - adx', 'id': '1084203077'}, {'name': 'Julho 2024 - adx', 'id': '1397652366'}, {'name': 'Agosto 2024 - adx', 'id': '1221701671'}, {'name': 'Setembro 2024 - adx', 'id': '1985698820'}, {'name': 'Outubro 2024 - adx', 'id': '989413563'}, {'name': 'Novembro 2024 - adx', 'id': '1988008389'}, {'name': 'Fevereiro 2025 - adx', 'id': '1214865724'}, {'name': 'Março 2025 - adx', 'id': '1415771015'}, {'name': 'Abril 2025 - adx', 'id': '1945940212'}, {'name': 'Maio 2025 - adx', 'id': '921325084'}, {'name': 'Ot agosto 2024 - adx', 'id': '386393815'}, {'name': 'Ot julho 2024 - adx', 'id': '2081801388'}, {'name': 'Ot junho 2024 - adx', 'id': '1970126649'}, {'name': 'Ot maio 2024 - adx', 'id': '1208632140'}, {'name': 'Ot Abr 2024 - adx', 'id': '789973243'}, {'name': 'Ot Mar 2024 - adx', 'id': '1483122517'}, {'name': 'Ot Fev 2024 - adx', 'id': '1993804290'}, {'name': 'Ot Jan 2024 - adx', 'id': '308526250'}]
+2025-05-07 10:51:05,961 - root - INFO - Dados lidos com sucesso da aba 'Maio 2025 - adx': 33 registros
+2025-05-07 10:51:05,963 - root - INFO - Enviando mensagem ao Slack: :bar_chart: Atualização  AppNews :warning: :warning:
+Investimento: *R$ 3,12*
+Receita: *R$ 0,00*
+ROAS: *0,00*
+MC: *-R$ 3,12*
+2025-05-07 10:51:06,163 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:51:10,350 - root - INFO - Enviando mensagem ao Slack: ```========================= RESUMO =========================```
+2025-05-07 10:51:10,546 - root - INFO - Resposta do Slack: status=200, body=ok
+2025-05-07 10:51:10,547 - root - INFO - Enviando mensagem ao Slack: *Resumo Squad B:*
+Investimento total: R$ 2.040,70
+Receita total em reais: R$ 45,49
+Receita total em dólares: $ 593,28
+MC total: R$ 890,91
+2025-05-07 10:51:10,740 - root - INFO - Resposta do Slack: status=200, body=ok

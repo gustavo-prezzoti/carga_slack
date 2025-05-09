@@ -392,7 +392,9 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                 site_receita_dolar = 0.0
                 site_mc = 0.0
                 encontrou_registro = False
-                roas_lidos = [] 
+                roas_lidos = []
+                retry_count = 0
+                max_retries = 5
                 for sheet in sheets:
                     sheet_id = sheet['id']
                     records, summary, actual_name = sheets_processor.read_data(sheet_id)
@@ -446,6 +448,17 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                     roas_geral = clean_value(current_record.get('ROAS Geral', '0,00'))
                     mc_geral = clean_value(current_record.get('MC Geral', '0,00'))
                     print(f"Valores encontrados para {site_name}: Investimento={investimento}, Receita={receita}, ROAS={roas_geral}, MC={mc_geral}")
+                    
+                    if is_data_zero_or_null(investimento, receita, roas_geral):
+                        if retry_count < max_retries - 1: 
+                            logging.warning(f"Dados zerados/nulos para {site_name}. Tentativa {retry_count + 1}/{max_retries}. Aguardando 5 minutos para reprocessar...")
+                            time.sleep(300)
+                            retry = True
+                            retry_count += 1
+                            break 
+                        else:
+                            logging.warning(f"Dados continuam zerados/nulos após {max_retries} tentativas para {site_name}.")
+                            send_to_slack(f":warning: Site {site_name} retornou dados zerados/nulos após {max_retries} tentativas.", webhook_url)
                     
                     is_dolar = is_dollar_value(receita)
                     print(f"[DEBUG] Receita '{receita}' detectada como {'DÓLAR' if is_dolar else 'REAL'}")
@@ -548,6 +561,24 @@ def exponential_backoff(attempt, max_backoff=60):
     base_delay = min(2 ** (attempt - 1), max_backoff)
     jitter = random.uniform(0, 0.1 * base_delay)  
     return base_delay + jitter
+
+def is_data_zero_or_null(investimento, receita, roas_geral):
+    """
+    Verifica se os dados principais estão zerados ou nulos.
+    
+    Args:
+        investimento: Valor do investimento
+        receita: Valor da receita
+        roas_geral: Valor do ROAS
+        
+    Returns:
+        True se todos os valores estiverem zerados/nulos, False caso contrário
+    """
+    inv_zero = to_float(investimento) == 0.0
+    rec_zero = to_float(receita) == 0.0
+    roas_zero = to_float(roas_geral) == 0.0 or roas_geral in ['0,00', '0.00', '0', '', None]
+    
+    return inv_zero and rec_zero and roas_zero
 
 def main():
     """Função principal do programa."""
@@ -746,7 +777,18 @@ def main():
                             mc_geral = clean_value(current_record.get('MC Geral', '0,00'))
                             print(f"Valores encontrados para {site_name}: Investimento={investimento}, Receita={receita}, ROAS={roas_geral}, MC={mc_geral}")
                             
-
+                            # Verifica se os dados são todos zeros ou nulos
+                            if is_data_zero_or_null(investimento, receita, roas_geral):
+                                if retry_count < max_retries - 1:  # -1 pois ainda estamos na tentativa atual
+                                    logging.warning(f"Dados zerados/nulos para {site_name}. Tentativa {retry_count + 1}/{max_retries}. Aguardando 5 minutos para reprocessar...")
+                                    time.sleep(300)  # 5 minutos
+                                    retry = True
+                                    retry_count += 1
+                                    break  # Sai do loop da aba atual para reprocessar o site
+                                else:
+                                    logging.warning(f"Dados continuam zerados/nulos após {max_retries} tentativas para {site_name}.")
+                                    send_to_slack(f":warning: Site {site_name} retornou dados zerados/nulos após {max_retries} tentativas.", webhook_url)
+                            
                             is_dolar = is_dollar_value(receita)
                             print(f"[DEBUG] Receita '{receita}' detectada como {'DÓLAR' if is_dolar else 'REAL'}")
                             
@@ -850,7 +892,13 @@ if __name__ == "__main__":
 
         def job():
             print(f"[Agendador] Executando rotina em {datetime.now(pytz.timezone('America/Sao_Paulo')).strftime('%d/%m/%Y %H:%M')}")
-            main()
+            # Lógica para evitar que execuções das 21:10 que falhem bloqueiem outras execuções agendadas
+            try:
+                main()
+            except Exception as e:
+                logging.error(f"Erro na execução agendada: {e}")
+                print(f"Erro na execução agendada: {e}")
+                print(traceback.format_exc())
 
         print("Agendador: executando às 00:10, 03:10, 06:10, 09:10, 12:10, 15:10, 18:10 e 21:10. Pressione Ctrl+C para sair.")
         for hour in range(0, 24, 3):
