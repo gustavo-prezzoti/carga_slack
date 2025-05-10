@@ -161,8 +161,9 @@ def send_to_slack(message: str, webhook_url: str) -> bool:
         return False
 
 def get_current_date_str() -> str:
-    """Retorna a data atual no formato DD/MM.""" 
-    now = datetime.now()
+    """Retorna a data atual no formato DD/MM usando o fuso horário de Brasília.""" 
+    tz = pytz.timezone('America/Sao_Paulo')
+    now = datetime.now(tz)
     return f"{now.day:02d}/{now.month:02d}"
 
 def get_brasilia_time_str():
@@ -394,7 +395,7 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                 encontrou_registro = False
                 roas_lidos = []
                 retry_count = 0
-                max_retries = 5
+                max_retries = 12
                 for sheet in sheets:
                     sheet_id = sheet['id']
                     records, summary, actual_name = sheets_processor.read_data(sheet_id)
@@ -455,7 +456,8 @@ def process_all_sheets(sheets_url: str, site_name: str) -> Dict[str, int]:
                             time.sleep(300)
                             retry = True
                             retry_count += 1
-                            break 
+                            site_roas = '0,00'
+                            break  
                         else:
                             logging.warning(f"Dados continuam zerados/nulos após {max_retries} tentativas para {site_name}.")
                             send_to_slack(f":warning: Site {site_name} retornou dados zerados/nulos após {max_retries} tentativas.", webhook_url)
@@ -646,7 +648,7 @@ def main():
             for site_name in sites:
                 retry = True
                 retry_count = 0
-                max_retries = 5
+                max_retries = 12
                 while retry and retry_count < max_retries:
                     try:
                         config = db.get_site_config(site_name)
@@ -784,6 +786,7 @@ def main():
                                     time.sleep(300)  # 5 minutos
                                     retry = True
                                     retry_count += 1
+                                    site_roas = '0,00'  # Define valor default antes do break
                                     break  # Sai do loop da aba atual para reprocessar o site
                                 else:
                                     logging.warning(f"Dados continuam zerados/nulos após {max_retries} tentativas para {site_name}.")
